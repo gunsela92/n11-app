@@ -30,8 +30,8 @@ const ProductVariants = ({productData, colorOptions, sizeAttributes, onSelectCha
         </VariantLabelWrapper>
         <OptionsGrid>
           {sizeAttributes?.map((size, i) => (
-            <GridItem key={i} selected={!size?.isDisabled && selectedProductInfo?.Beden === size?.value} disabled={size?.isDisabled}
-              onClick={() => selectedProductInfo?.Renk && !size?.isDisabled && onSelectChange(SIZE, size?.value)}>
+            <GridItem key={i} selected={!size?.disabled && selectedProductInfo?.Beden === size?.value} disabled={size?.disabled}
+              onClick={() => selectedProductInfo?.Renk && !size?.disabled && onSelectChange(SIZE, size?.value)}>
               {size?.value}
             </GridItem>
           ))}

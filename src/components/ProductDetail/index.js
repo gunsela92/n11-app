@@ -28,7 +28,7 @@ const ProductDetail = ({selectedProductInfo, productData, onChangeAttributes}) =
         availableSizes = foundProducts.flatMap((variant) => variant?.attributes?.find((attribute) => attribute?.name === SIZE)?.value);
       }
       const foundSizes = sizeAttributes.map(val => {
-        return {value: val.value, isDisabled: availableSizes.findIndex(item => item === val.value) === -1}
+        return {value: val.value, disabled: availableSizes.findIndex(item => item === val.value) === -1}
       });
       setSizeAttributes(foundSizes);
     }
@@ -69,7 +69,7 @@ const ProductDetail = ({selectedProductInfo, productData, onChangeAttributes}) =
       setColorOptions(productData.selectableAttributes.find(item => item.name === COLOR)?.values);
       const availableSizeOptions = productData.selectableAttributes
         .find(item => item.name === SIZE)?.values?.map(item => {
-          return {value: item, isDisabled: false}
+          return {value: item, disabled: false}
         });
       setSizeAttributes(availableSizeOptions);
     }
